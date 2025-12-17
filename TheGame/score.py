@@ -1,4 +1,4 @@
 
 
 def scoreCal(guessesUsed):
-    return (1000 - guessesUsed * 100)
+    return (1100 - guessesUsed * 100)

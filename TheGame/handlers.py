@@ -16,16 +16,16 @@ def difficultySelection(diff):
     difficultySelected = True
     maxGuesses = 0
     if diff == 'e':
-        diff = 1
+        diff = "easy"
         maxGuesses = 10
     elif diff == 'm':
-        diff = 2
-        maxGuesses = 7
-    elif diff == 'h':
-        diff = 3
+        diff = "medium"
         maxGuesses = 5
+    elif diff == 'h':
+        diff = "hard"
+        maxGuesses = 1
     else:
         difficultySelected = False
         print("Invalid input, please try again.")
 
-    return [maxGuesses, difficultySelected]
+    return [maxGuesses, difficultySelected, diff]
