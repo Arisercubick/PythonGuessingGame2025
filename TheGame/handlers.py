@@ -1,0 +1,26 @@
+import time
+
+
+def waitPrint(msg):
+    for char in msg:
+        print(char, end='', flush=True)
+        time.sleep(0.05)
+
+
+def difficultySelection(diff):
+    difficultySelected = True
+    maxGuesses = 0
+    if diff == 'e':
+        diff = 1
+        maxGuesses = 10
+    elif diff == 'm':
+        diff = 2
+        maxGuesses = 7
+    elif diff == 'h':
+        diff = 3
+        maxGuesses = 5
+    else:
+        difficultySelected = False
+        print("Invalid input, please try again.")
+
+    return [diff, maxGuesses, difficultySelected]
