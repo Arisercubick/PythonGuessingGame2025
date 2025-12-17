@@ -7,6 +7,11 @@ def waitPrint(msg):
         time.sleep(0.05)
 
 
+def waitPrintArray(msg):
+    for item in msg:
+        waitPrint(item)
+
+
 def difficultySelection(diff):
     difficultySelected = True
     maxGuesses = 0
@@ -23,4 +28,4 @@ def difficultySelection(diff):
         difficultySelected = False
         print("Invalid input, please try again.")
 
-    return [diff, maxGuesses, difficultySelected]
+    return [maxGuesses, difficultySelected]
