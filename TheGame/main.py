@@ -39,8 +39,12 @@ def game(maxGuesses, difficulty):
         levelKey = 'level' + str(levelcount)
         levelData = levelSelect(levelKey)
         waitPrint(f"Welcome to Level {levelcount}\n")
-        [guessesUsed, gameOver] = playLevel(levelData, maxGuesses)
-        score += scoreCal(guessesUsed)
+        [guessesUsed, gameOver, levelComplete] = playLevel(
+            levelData, maxGuesses)
+        if levelComplete:
+            waitPrint(
+                f"Congratulations! You have completed Level {levelcount}\n")
+            score += scoreCal(guessesUsed)
         waitPrint(f"Your score is: {score}\n")
         if not gameOver:
             levelcount += 1
@@ -58,10 +62,10 @@ def playLevel(levelData, maxGuesses):
         answer = answer.lower()
         if answer == levelData['answer'].lower():
             levelComplete = True
-            return [guessesUsed, False]
+            return [guessesUsed, False, True]
         elif guessesUsed == maxGuesses:
             levelComplete = True
-            return [guessesUsed, True]
+            return [guessesUsed, True, False]
         else:
             guessesUsed += 1
             waitPrint(f"Try again! Attempt {guessesUsed}\n")
