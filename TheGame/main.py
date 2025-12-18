@@ -1,6 +1,7 @@
-from score import *
-from levels import *
-from handlers import *
+
+from handlers.handlers import *
+from handlers.levels import *
+from handlers.score import *
 
 name = ""
 
@@ -19,11 +20,11 @@ def main():
         [maxGuesses, difficultySelected, difficultyO] = difficultySelection(
             difficulty)
     while continueOn:
-        game(maxGuesses, difficultyO)
+        score = game(maxGuesses, difficultyO)
         again = input("Do you want to play again? (y/n): ")
         if again.lower() != 'y':
             continueOn = False
-            print("Thanks for playing!")
+            print(f"Thanks for playing, {name}\nYour final score is {score}!")
 
 
 def game(maxGuesses, difficulty):
@@ -43,6 +44,7 @@ def game(maxGuesses, difficulty):
         waitPrint(f"Your score is: {score}\n")
         if not gameOver:
             levelcount += 1
+    return score
 
 
 def playLevel(levelData, maxGuesses):
