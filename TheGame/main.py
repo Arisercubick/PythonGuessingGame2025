@@ -53,7 +53,7 @@ def playLevel(levelData, maxGuesses):
     while not levelComplete:
         waitPrintArray(f"Options: {levelData['array']}\n")
         waitPrint(levelData['question'])
-        print("\n\n")
+        print("\n")
         answer = input("Answer: ")
         answer = answer.lower()
         if answer == levelData['answer'].lower():
