@@ -21,6 +21,16 @@ def levelSelect(level):
             'array': ["Shakespeare", "Hemingway", "Fitzgerald", "Orwell"],
             'question': "Who wrote '1984'?",
             'answer': "Orwell"
+        },
+        'level5': {
+            'array': ["Pacific", "Atlantic", "Indian", "Arctic"],
+            'question': "What is the largest ocean on Earth?",
+            'answer': "Pacific"
+        },
+        'level6': {
+            'array': ["Oxygen", "Hydrogen", "Carbon Dioxide", "Nitrogen"],
+            'question': "What is the most abundant gas in the Earth's atmosphere?",
+            'answer': "Nitrogen"
         }
     }
     return levels[level]
